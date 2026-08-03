@@ -59,9 +59,21 @@ The objective of this paper is to propose and validate a methodology for using A
 
 Analysis of junior frontend developer vacancies reveals typical employer requirements: proficiency in JavaScript/TypeScript, experience with React (hooks, state management, routing), understanding of REST APIs, Git workflow, and ability to work with existing codebases. Comparison of these requirements with typical university curricula reveals a significant gap: academic courses focus on fundamental disciplines that form a necessary foundation but do not provide practical experience with modern frameworks and tools.
 
-Existing learning formats have notable limitations. Lectures and laboratory work provide structured material delivery but have a fixed pace and do not adapt to individual student levels. Online courses predominantly follow the ``repeat after instructor'' format --- students reproduce code but do not develop independent problem-solving skills. Self-directed learning from documentation requires high self-organization and prior experience that beginners typically lack.
+\subsection{Limitations of Existing Learning Formats}
 
-Individual mentorship addresses these limitations effectively~\cite{begel2008} by adapting explanations, providing code review, guiding without giving direct answers, and supporting motivation. However, it remains financially expensive, time-limited, subjective, and non-reproducible.
+Existing learning formats have notable limitations that prevent effective preparation of frontend developers:
+
+\textbf{Lectures and laboratory work} provide structured material delivery but have a fixed pace and do not adapt to individual student levels. A student who does not understand a concept on the first attempt has no opportunity to receive a repeated explanation from a different angle. Laboratory assignments are typically isolated exercises --- implementing a single component or function --- that do not reflect the complexity of real-world projects where multiple systems interact.
+
+\textbf{Online courses} predominantly follow the ``repeat after instructor'' format --- students reproduce code from video tutorials but do not develop independent problem-solving skills. When encountering a problem not covered by the course, students are left without support. A meta-analysis of AI tools in programming education~\cite{mdpi2025} confirms that traditional online formats show limited effectiveness compared to AI-assisted approaches.
+
+\textbf{Self-directed learning from documentation} requires high self-organization and prior experience that beginners typically lack. A novice often does not know what to search for, does not understand the context of what they read, and receives no feedback on the quality of their solution.
+
+\subsection{Mentorship: Effective but Not Scalable}
+
+Individual mentorship addresses these limitations effectively~\cite{begel2008} by adapting explanations, providing code review, guiding without giving direct answers, and supporting motivation. Research consistently shows that personalized tutoring produces significant learning gains~\cite{nature2025, brookings2025}.
+
+However, mentorship remains financially expensive, time-limited (mentor available only at scheduled hours), subjective (dependent on specific mentor competence), and non-reproducible (each session is unique). A single mentor physically cannot support dozens of students simultaneously, making this approach inherently non-scalable for university education.
 
 These constraints create a demand for an approach that combines the personalization and adaptiveness of mentorship with the scalability and accessibility of digital tools.
 
@@ -128,9 +140,20 @@ This approach simulates a real IT company workflow: a developer receives a task 
 
 The AI mentor operates directly within the student's development environment (smart IDE). It has access to: project structure, technology stack and configuration, current student code, and current sprint task descriptions. This enables contextual responses rather than abstract documentation examples.
 
+For example, when a student asks ``How do I implement a protected route?'' the AI responds considering the specific router structure in the student's project, the libraries already in use, and the existing authorization code --- rather than providing a generic example from documentation. This contextualization is what distinguishes AI mentorship from general-purpose chatbots: the mentor understands the student's specific situation.
+
 \subsection{Interview Preparation and Pet Projects}
 
-AI effectively models technical interview format for frontend developers: theoretical questions, practical coding tasks, and architectural discussions. For pet projects, AI serves as an architectural advisor and reviewer. The key principle throughout: AI explains concepts and indicates direction but does not generate ready-made code for copying.
+AI effectively models technical interview format for frontend developers. This includes:
+\begin{itemize}
+\item \textbf{Theoretical questions:} explaining event loop, Virtual DOM, closures, React component lifecycle;
+\item \textbf{Practical tasks:} implementing debounce functions, custom hooks, state management patterns;
+\item \textbf{Architectural discussions:} choosing between Context API and Redux, structuring large applications.
+\end{itemize}
+
+AI analyzes the student's responses, identifies inaccuracies, and suggests how to improve the answer --- simulating a real interviewer in a dialogical format.
+
+For pet projects, AI serves as an architectural advisor and reviewer --- helping choose technologies, reviewing project structure, analyzing written code, and suggesting new features. The result is a portfolio project written independently by the student, with understanding of every line of code. The key principle throughout: AI explains concepts and indicates direction but does not generate ready-made code for copying.
 
 \section{Experimental Evaluation}
 
@@ -182,8 +205,13 @@ Participants noted the following aspects of AI mentor interaction:
 \item ability to receive explanations at any time without waiting;
 \item contextual responses --- AI understood their project structure;
 \item absence of psychological pressure --- ability to ask basic questions without embarrassment;
-\item usefulness in error analysis --- AI explained error causes in the context of specific files.
+\item usefulness in error analysis --- AI explained error causes in the context of specific files;
+\item motivation support --- AI acknowledged progress and suggested next steps.
 \end{itemize}
+
+Participants also reported that AI mentorship significantly reduced the time spent ``stuck'' on problems. Previously, encountering an unfamiliar error could block progress for hours until a human mentor became available. With AI, the typical resolution time for common issues dropped to minutes.
+
+Participant recommendations included: adding more visual examples of expected results (UI screenshots), increasing the number of sprints with more complex topics (WebSocket, real-time updates), and providing initial onboarding video for environment setup.
 
 \section{Comparison with Traditional Approaches}
 
@@ -238,6 +266,10 @@ This paper investigated the use of LLM-based artificial intelligence as a person
 \textbf{Practical implications.} AI mentorship can be integrated into higher education as a complement to existing formats. The instructor's role transforms from knowledge carrier to learning process curator who monitors progress and verifies results.
 
 \textbf{Future work} includes conducting a comparative experiment with a control group, increasing participant sample size, and investigating effectiveness for other development directions.
+
+\section*{Acknowledgment}
+
+The authors would like to thank the students who participated in the pilot evaluation for their valuable feedback and engagement throughout the experimental period.
 
 \begin{thebibliography}{00}
 
